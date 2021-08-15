@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="330.0" prefWidth="516.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ModifyDeviceController">
+   <HBox prefHeight="70.0" prefWidth="600.0">
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="HostID Inserito :">
+         <font>
+            <Font name="Tahoma" size="18.0" />
+         </font>
+         <HBox.margin>
+            <Insets left="30.0" top="20.0" />
+         </HBox.margin>
+      </Text>
+      <Label fx:id="hostidmodwin" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="393.0" text="-------" textAlignment="CENTER">
+         <HBox.margin>
+            <Insets left="20.0" top="20.0" />
+         </HBox.margin>
+         <font>
+            <Font name="Tahoma" size="18.0" />
+         </font>
+      </Label>
+   </HBox>
+   <Separator prefWidth="200.0" />
+   <Separator layoutX="10.0" layoutY="80.0" prefWidth="200.0" />
+   <HBox prefHeight="40.0" prefWidth="600.0">
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Punto Di Vendita Nuovo :">
+         <font>
+            <Font name="Tahoma" size="13.0" />
+         </font>
+         <HBox.margin>
+            <Insets left="10.0" top="5.0" />
+         </HBox.margin>
+      </Text>
+      <TextField fx:id="pvn" prefHeight="30.0" prefWidth="229.0">
+         <HBox.margin>
+            <Insets left="10.0" />
+         </HBox.margin>
+      </TextField>
+      <RadioButton fx:id="checkpv" mnemonicParsing="false">
+         <HBox.margin>
+            <Insets left="10.0" top="5.0" />
+         </HBox.margin>
+         <toggleGroup>
+            <ToggleGroup fx:id="tg1" />
+         </toggleGroup>
+      </RadioButton>
+      <Button fx:id="cpv" mnemonicParsing="false" onAction="#cpvClicked" text="Cambia">
+         <HBox.margin>
+            <Insets left="10.0" top="5.0" />
+         </HBox.margin>
+      </Button>
+      <VBox.margin>
+         <Insets top="10.0" />
+      </VBox.margin>
+   </HBox>
+   <HBox prefHeight="40.0" prefWidth="600.0">
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Serial Number Nuovo :">
+         <font>
+            <Font name="Tahoma" size="13.0" />
+         </font>
+         <HBox.margin>
+            <Insets left="10.0" top="5.0" />
+         </HBox.margin>
+      </Text>
+      <TextField fx:id="snn" prefHeight="30.0" prefWidth="229.0">
+         <HBox.margin>
+            <Insets left="25.0" />
+         </HBox.margin>
+      </TextField>
+      <RadioButton fx:id="checksn" mnemonicParsing="false" toggleGroup="$tg1">
+         <HBox.margin>
+            <Insets left="10.0" top="5.0" />
+         </HBox.margin>
+      </RadioButton>
+      <Button fx:id="csn" mnemonicParsing="false" onAction="#csnClicked" text="Cambia">
+         <HBox.margin>
+            <Insets left="10.0" top="5.0" />
+         </HBox.margin>
+      </Button>
+      <VBox.margin>
+         <Insets top="10.0" />
+      </VBox.margin>
+   </HBox>
+   <HBox prefHeight="40.0" prefWidth="600.0">
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Modello Nuovo :">
+         <font>
+            <Font name="Tahoma" size="13.0" />
+         </font>
+         <HBox.margin>
+            <Insets left="10.0" top="5.0" />
+         </HBox.margin>
+      </Text>
+      <TextField fx:id="modn" prefHeight="30.0" prefWidth="229.0">
+         <HBox.margin>
+            <Insets left="62.0" />
+         </HBox.margin>
+      </TextField>
+      <RadioButton fx:id="checkmn" mnemonicParsing="false" toggleGroup="$tg1">
+         <HBox.margin>
+            <Insets left="10.0" top="5.0" />
+         </HBox.margin>
+      </RadioButton>
+      <Button fx:id="cmodn" mnemonicParsing="false" onAction="#cmodnClicked" text="Cambia">
+         <HBox.margin>
+            <Insets left="10.0" top="5.0" />
+         </HBox.margin>
+      </Button>
+      <VBox.margin>
+         <Insets top="10.0" />
+      </VBox.margin>
+   </HBox>
+   <HBox prefHeight="40.0" prefWidth="600.0">
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="HostID Nuovo :">
+         <font>
+            <Font name="Tahoma" size="13.0" />
+         </font>
+         <HBox.margin>
+            <Insets left="10.0" top="5.0" />
+         </HBox.margin>
+      </Text>
+      <TextField fx:id="hostn" prefHeight="30.0" prefWidth="228.0">
+         <HBox.margin>
+            <Insets left="67.0" />
+         </HBox.margin>
+      </TextField>
+      <RadioButton fx:id="checkhostid" mnemonicParsing="false" toggleGroup="$tg1">
+         <padding>
+            <Insets top="5.0" />
+         </padding>
+         <HBox.margin>
+            <Insets left="10.0" top="5.0" />
+         </HBox.margin>
+      </RadioButton>
+      <Button fx:id="chostn" mnemonicParsing="false" onAction="#chostnClicked" text="Cambia">
+         <HBox.margin>
+            <Insets left="10.0" top="5.0" />
+         </HBox.margin>
+      </Button>
+      <VBox.margin>
+         <Insets top="10.0" />
+      </VBox.margin>
+   </HBox>
+   <Text fx:id="status" strokeType="OUTSIDE" strokeWidth="0.0" text="Sviluppato Da Hamid Per Le Esigenze Di Mattia">
+      <font>
+         <Font name="Tahoma" size="11.0" />
+      </font>
+      <VBox.margin>
+         <Insets left="10.0" top="30.0" />
+      </VBox.margin>
+   </Text>
+</VBox>

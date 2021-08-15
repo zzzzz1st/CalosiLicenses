@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="430.0" prefWidth="549.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.InsertController">
+   <HBox prefHeight="100.0" prefWidth="200.0">
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="HostID Inserito :">
+         <font>
+            <Font name="Tahoma" size="18.0" />
+         </font>
+         <HBox.margin>
+            <Insets left="20.0" />
+         </HBox.margin>
+      </Text>
+      <Label fx:id="inshostid" alignment="CENTER" contentDisplay="CENTER" prefHeight="23.0" prefWidth="426.0" text="Label" textAlignment="CENTER">
+         <HBox.margin>
+            <Insets left="20.0" />
+         </HBox.margin>
+         <font>
+            <Font name="Tahoma" size="18.0" />
+         </font>
+      </Label>
+      <VBox.margin>
+         <Insets top="30.0" />
+      </VBox.margin>
+   </HBox>
+   <Separator prefWidth="200.0" />
+   <Separator prefWidth="200.0" />
+   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Inserisci la licenza">
+      <font>
+         <Font name="Tahoma" size="18.0" />
+      </font>
+      <VBox.margin>
+         <Insets left="20.0" top="22.0" />
+      </VBox.margin>
+   </Text>
+   <VBox prefHeight="200.0" prefWidth="549.0">
+      <VBox.margin>
+         <Insets />
+      </VBox.margin>
+      <HBox prefHeight="33.0" prefWidth="625.0">
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin>
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Numero Di Ordine Riferito :">
+            <font>
+               <Font name="Tahoma" size="13.0" />
+            </font>
+            <HBox.margin>
+               <Insets left="20.0" />
+            </HBox.margin>
+         </Text>
+         <TextField fx:id="insnumord" prefHeight="25.0" prefWidth="260.0">
+            <HBox.margin>
+               <Insets left="20.0" />
+            </HBox.margin>
+         </TextField>
+      </HBox>
+      <HBox prefHeight="25.0" prefWidth="625.0">
+         <VBox.margin>
+            <Insets bottom="2.0" />
+         </VBox.margin>
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Codice Licenza :">
+            <font>
+               <Font name="Tahoma" size="13.0" />
+            </font>
+            <HBox.margin>
+               <Insets left="20.0" />
+            </HBox.margin>
+         </Text>
+         <TextField fx:id="inscodel" prefHeight="25.0" prefWidth="259.0">
+            <HBox.margin>
+               <Insets left="85.0" />
+            </HBox.margin>
+         </TextField>
+      </HBox>
+      <Button mnemonicParsing="false" onAction="#inserisciButtonClicked" prefHeight="40.0" prefWidth="260.0" text="Inserisci">
+         <padding>
+            <Insets right="2.0" />
+         </padding>
+         <VBox.margin>
+            <Insets bottom="20.0" left="197.0" top="7.0" />
+         </VBox.margin>
+      </Button>
+      <Separator prefWidth="200.0" />
+      <Separator prefWidth="200.0" />
+   </VBox>
+   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Cancella la licenza" wrappingWidth="168.052734375">
+      <font>
+         <Font name="Tahoma" size="18.0" />
+      </font>
+      <VBox.margin>
+         <Insets bottom="10.0" left="20.0" top="20.0" />
+      </VBox.margin>
+   </Text>
+   <HBox prefHeight="61.0" prefWidth="549.0">
+      <VBox.margin>
+         <Insets bottom="20.0" />
+      </VBox.margin>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Codice Licenza :">
+         <font>
+            <Font name="Tahoma" size="13.0" />
+         </font>
+         <HBox.margin>
+            <Insets bottom="25.0" left="20.0" top="15.0" />
+         </HBox.margin>
+      </Text>
+      <TextField fx:id="dellic" prefHeight="30.0" prefWidth="229.0">
+         <HBox.margin>
+            <Insets left="20.0" top="10.0" />
+         </HBox.margin>
+      </TextField>
+      <Button mnemonicParsing="false" onAction="#cancellaButtonClicked" prefHeight="30.0" prefWidth="146.0" text="Cancella">
+         <HBox.margin>
+            <Insets left="10.0" top="10.0" />
+         </HBox.margin>
+      </Button>
+   </HBox>
+   <Text fx:id="status" strokeType="OUTSIDE" strokeWidth="0.0" text="Sviluppato Da Hamid Per Le Esigenze Di Mattia">
+      <font>
+         <Font name="Tahoma" size="11.0" />
+      </font>
+      <VBox.margin>
+         <Insets bottom="10.0" left="10.0" />
+      </VBox.margin>
+   </Text>
+</VBox>
