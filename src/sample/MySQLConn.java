@@ -25,11 +25,16 @@ public class MySQLConn {
 
     public void insertDispositivo(String hostid, String sn, String model, String puntoV){
         try {
-            Statement stmt = connection.createStatement();
-            String query = "insert into Dispositivo values (" + "'" + hostid + "'" + "," + "'" + sn + "'" + ","
-                                                                + "'" + model + "'" + "," + "'" + puntoV + "'" + ")";
+
+            String query = "insert into Dispositivo (HostID, SerialN, Model, PuntoV) " +
+                            "values (?,?,?,?)";
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setString(1, hostid);
+            stmt.setString(2, sn);
+            stmt.setString(3, model);
+            stmt.setString(4, puntoV);
             System.out.println(query);
-            stmt.executeUpdate(query);
+            stmt.execute();
         }catch (SQLException ex){
             ErrorsController errorsController = new ErrorsController();
             errorsController.display(ex.getMessage());
@@ -39,10 +44,15 @@ public class MySQLConn {
 
     public void insertLicenza(String hostid, String codeL, String nOrdine){
         try {
-            Statement stmt = connection.createStatement();
-            String query = "insert into Licenza values (" + "'" + hostid + "'" + "," + "'" + codeL + "'" + "," + "'" + nOrdine + "'" + ")";
+
+            String query = "insert into Licenza (HostID, CodL, NOrdine) " +
+                            "values (?,?,?)";
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setString(1, hostid);
+            stmt.setString(2, codeL);
+            stmt.setString(3, nOrdine);
             System.out.println(query);
-            stmt.executeUpdate(query);
+            stmt.execute();
         }catch (SQLException ex){
             ErrorsController errorsController = new ErrorsController();
             errorsController.display(ex.getMessage());
@@ -52,10 +62,13 @@ public class MySQLConn {
 
     public void deleteLicenza(String hostid, String codeL) {
         try {
-            Statement stmt = connection.createStatement();
-            String query = "delete from Licenza where hostID = " + "'" + hostid + "'" + " and CodL = " + "'" + codeL + "'";
+
+            String query = "delete from Licenza where hostID = ? and CodL = ?";
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setString(1, hostid);
+            stmt.setString(2, codeL);
             System.out.println(query);
-            stmt.executeUpdate(query);
+            stmt.execute();
         } catch (SQLException ex) {
             ErrorsController errorsController = new ErrorsController();
             errorsController.display(ex.getMessage());
@@ -64,10 +77,11 @@ public class MySQLConn {
 
         public void deleteDispositivo(String hostid){
             try {
-                Statement stmt = connection.createStatement();
-                String query = "delete from Dispositivo where HostID= " + "'" + hostid + "'";
+                String query = "delete from Dispositivo where hostID = ?";
+                PreparedStatement stmt = connection.prepareStatement(query);
+                stmt.setString(1, hostid);
                 System.out.println(query);
-                stmt.executeUpdate(query);
+                stmt.execute();
             } catch (SQLException ex) {
                 ErrorsController errorsController = new ErrorsController();
                 errorsController.display(ex.getMessage());
@@ -76,10 +90,12 @@ public class MySQLConn {
 
     public void updateDispositivo(String setwhat, String setthis, String setwhere){
         try {
-            Statement stmt = connection.createStatement();
-            String query = "update Dispositivo set " + setwhat + " =" + "'" + setthis + "' " + "where HostID = " + "'" + setwhere + "'";
+            String query = "update Dispositivo set " + setwhat + " = ?  where HostID = ?";
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setString(1, setthis);
+            stmt.setString(2, setwhere);
             System.out.println(query);
-            stmt.executeUpdate(query);
+            stmt.execute();
         }catch (SQLException ex){
             ErrorsController errorsController = new ErrorsController();
             errorsController.display(ex.getMessage());
@@ -89,10 +105,11 @@ public class MySQLConn {
 
     public ResultSet selectByPV(String pv){
         try {
-            Statement stmt = connection.createStatement();
-            String query = "select Dispositivo.HostID, CodL, NOrdine from Dispositivo left join Licenza on Dispositivo.HostID = Licenza.HostID where Dispositivo.PuntoV = " + "'" + pv + "'";
+            String query = "select Dispositivo.HostID, CodL, NOrdine from Dispositivo left join Licenza on Dispositivo.HostID = Licenza.HostID where Dispositivo.PuntoV = ?";
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setString(1, pv);
             System.out.println(query);
-            return stmt.executeQuery(query);
+            return stmt.executeQuery();
         }catch (SQLException ex){
             ErrorsController errorsController = new ErrorsController();
             errorsController.display(ex.getMessage());
@@ -102,10 +119,11 @@ public class MySQLConn {
 
     public ResultSet selectByHostID(String hostid){
         try {
-            Statement stmt = connection.createStatement();
-            String query = "SELECT SerialN, Model, PuntoV FROM Dispositivo where Dispositivo.HostID = " + "'" +hostid + "'";
+            String query = "SELECT SerialN, Model, PuntoV FROM Dispositivo where Dispositivo.HostID = ?";
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setString(1, hostid);
             System.out.println(query);
-            return stmt.executeQuery(query);
+            return stmt.executeQuery();
         }catch (SQLException ex){
             ErrorsController errorsController = new ErrorsController();
             errorsController.display(ex.getMessage());
@@ -115,10 +133,11 @@ public class MySQLConn {
 
     public ResultSet selectByHostIDLicenses(String hostid){
         try {
-            Statement stmt = connection.createStatement();
-            String query = "SELECT CodL, NOrdine FROM Licenza where Licenza.HostID= " + "'" + hostid + "'";
+            String query = "SELECT CodL, NOrdine FROM Licenza where Licenza.HostID= ?";
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setString(1, hostid);
             System.out.println(query);
-            return stmt.executeQuery(query);
+            return stmt.executeQuery();
         }catch (SQLException ex){
             ErrorsController errorsController = new ErrorsController();
             errorsController.display(ex.getMessage());
